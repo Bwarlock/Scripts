@@ -253,6 +253,9 @@ def combination(arr, start, end, r, temp, result):
     if start >= end:
         return
     for i in range(start, end):
+        if arr[i] == 0:
+            result.append(0)
+            continue
         temp = temp * arr[i]
         combination(arr, i + 1, end, r - 1, temp, result)
         temp = temp / arr[i]
